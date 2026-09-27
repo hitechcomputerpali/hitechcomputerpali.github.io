@@ -1,258 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Hi-Tech Computer Pali</title>
+<title>Hi-Tech Computer Pali</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    body {
-      background: #f5f7fa;
-      color: #111827;
-    }
+body{
+  background:#f5f7fa;
+  color:#111827;
+}
 
-    header {
-      background: #111827;
-      color: white;
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+header{
+  background:white;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 12px #00000012;
+}
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
 
-    .logo span {
-      color: #f5b942;
-    }
+.logo span{
+  color:#d99b27;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-    }
+nav a{
+  text-decoration:none;
+  color:#222;
+  margin-left:18px;
+  font-weight:bold;
+}
 
-    .hero {
-      padding: 80px 7%;
-      background: linear-gradient(135deg, #ffffff, #eef3f8);
-      text-align: center;
-    }
+.hero{
+  min-height:75vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:50px 7%;
+  background:linear-gradient(135deg,#fff,#edf2f7);
+}
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
+.hero h1{
+  font-size:48px;
+  margin-bottom:18px;
+}
 
-    .hero h1 span {
-      color: #d99a19;
-    }
+.hero h1 span{
+  color:#d99b27;
+}
 
-    .hero p {
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 25px;
-    }
+.hero p{
+  max-width:700px;
+  color:#555;
+  font-size:18px;
+  line-height:1.6;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 13px 24px;
-      background: #111827;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      margin: 5px;
-    }
+.buttons{
+  margin-top:30px;
+}
 
-    .btn.gold {
-      background: #d99a19;
-    }
+.btn{
+  display:inline-block;
+  padding:14px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  margin:5px;
+}
 
-    section {
-      padding: 60px 7%;
-    }
+.gold{
+  background:#d99b27;
+  color:white;
+}
 
-    .title {
-      text-align: center;
-      font-size: 30px;
-      margin-bottom: 35px;
-    }
+.black{
+  background:#111827;
+  color:white;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 20px;
-    }
+section{
+  padding:65px 7%;
+}
 
-    .card {
-      background: white;
-      padding: 28px 20px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-    }
+.title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:35px;
+}
 
-    .card .icon {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:22px;
+}
 
-    .card h3 {
-      margin-bottom: 10px;
-    }
+.card{
+  background:white;
+  padding:30px 20px;
+  text-align:center;
+  border-radius:15px;
+  box-shadow:0 5px 20px #0000000d;
+  transition:.3s;
+}
 
-    .card p {
-      color: #666;
-      font-size: 14px;
-      line-height: 1.5;
-    }
+.card:hover{
+  transform:translateY(-5px);
+}
 
-    .about {
-      background: #111827;
-      color: white;
-      text-align: center;
-    }
+.icon{
+  font-size:45px;
+  margin-bottom:15px;
+}
 
-    .about p {
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.7;
-      color: #ddd;
-    }
+.card h3{
+  margin-bottom:10px;
+}
 
-    .contact {
-      text-align: center;
-      background: white;
-    }
+.card p{
+  color:#666;
+  line-height:1.5;
+}
 
-    footer {
-      background: #080d16;
-      color: #aaa;
-      text-align: center;
-      padding: 25px;
-      font-size: 13px;
-    }
+.about{
+  background:#111827;
+  color:white;
+  text-align:center;
+}
 
-    @media (max-width: 650px) {
-      header {
-        flex-direction: column;
-        gap: 12px;
-      }
+.about p{
+  max-width:750px;
+  margin:auto;
+  color:#d1d5db;
+  line-height:1.7;
+}
 
-      nav a {
-        margin: 0 7px;
-      }
+.contact{
+  background:white;
+  text-align:center;
+}
 
-      .hero h1 {
-        font-size: 32px;
-      }
-    }
-  </style>
+.contact p{
+  margin:12px;
+  font-size:18px;
+}
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25D366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:28px;
+  z-index:200;
+  box-shadow:0 5px 20px #0005;
+}
+
+footer{
+  background:#090d15;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+
+@media(max-width:700px){
+
+  header{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav a{
+    margin:0 6px;
+    font-size:13px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Hi-Tech <span>Computer Pali</span></div>
 
-  <nav>
-    <a href="#products">Products</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<div class="logo">
+Hi-Tech <span>Computer Pali</span>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+
 </header>
 
-<section class="hero">
-  <h1>Welcome to <span>Hi-Tech Computer Pali</span></h1>
 
-  <p>
-    Laptops • PCs • CCTV • Accessories • Computer Service
-  </p>
+<section class="hero" id="home">
 
-  <a class="btn gold" href="https://wa.me/918005824340">
-    WhatsApp Us
-  </a>
+<h1>
+Welcome to <span>Hi-Tech Computer Pali</span>
+</h1>
 
-  <a class="btn" href="tel:+918005824340">
-    Call Now
-  </a>
+<p>
+Laptops • Desktop PCs • CCTV • Printers • Accessories
+<br>
+Sales, Service & Computer Solutions
+</p>
+
+<div class="buttons">
+
+<a href="#products" class="btn gold">
+View Products
+</a>
+
+<a href="#contact" class="btn black">
+Contact Us
+</a>
+
+</div>
+
 </section>
+
 
 <section id="products">
-  <h2 class="title">Our Products</h2>
 
-  <div class="cards">
+<h2 class="title">Our Products</h2>
 
-    <div class="card">
-      <div class="icon">💻</div>
-      <h3>Laptops</h3>
-      <p>Different brands and configurations available.</p>
-    </div>
+<div class="products">
 
-    <div class="card">
-      <div class="icon">🖥️</div>
-      <h3>Desktop PCs</h3>
-      <p>Desktop computers and complete PC setups.</p>
-    </div>
+<div class="card">
+<div class="icon">💻</div>
+<h3>Laptops</h3>
+<p>Quality laptops for home, office and daily use.</p>
+</div>
 
-    <div class="card">
-      <div class="icon">📹</div>
-      <h3>CCTV</h3>
-      <p>WiFi cameras, 4G cameras and CCTV systems.</p>
-    </div>
+<div class="card">
+<div class="icon">🖥️</div>
+<h3>Desktop PCs</h3>
+<p>Complete desktop computer setups.</p>
+</div>
 
-    <div class="card">
-      <div class="icon">⌨️</div>
-      <h3>Accessories</h3>
-      <p>Keyboard, mouse, headphones, cables and more.</p>
-    </div>
+<div class="card">
+<div class="icon">📹</div>
+<h3>CCTV</h3>
+<p>WiFi cameras, CCTV systems and security solutions.</p>
+</div>
 
-  </div>
+<div class="card">
+<div class="icon">🖨️</div>
+<h3>Printers</h3>
+<p>Printers and printing solutions for home and office.</p>
+</div>
+
+<div class="card">
+<div class="icon">⌨️</div>
+<h3>Accessories</h3>
+<p>Keyboard, mouse, headphones, cables and more.</p>
+</div>
+
+</div>
+
 </section>
 
-<section id="services" class="about">
-  <h2 class="title">Our Services</h2>
 
-  <p>
-    Laptop and computer repair, Windows installation,
-    software setup, CCTV installation and computer-related
-    service and support.
-  </p>
+<section class="about">
+
+<h2 class="title">Why Hi-Tech Computer Pali?</h2>
+
+<p>
+We provide computers, laptops, CCTV, printers and accessories
+along with reliable service and support.
+Visit Hi-Tech Computer Pali for your computer and security needs.
+</p>
+
 </section>
 
-<section id="contact" class="contact">
-  <h2 class="title">Visit Hi-Tech Computer Pali</h2>
 
-  <p>For laptops, PCs, CCTV, accessories and computer services.</p>
+<section id="services">
 
-  <br>
+<h2 class="title">Our Services</h2>
 
-  <a class="btn gold" href="https://wa.me/918005824340">
-    Chat on WhatsApp
-  </a>
+<div class="products">
 
-  <a class="btn" href="tel:+918005824340">
-    Call 8005824340
-  </a>
+<div class="card">
+<div class="icon">🔧</div>
+<h3>Computer Service</h3>
+<p>Computer troubleshooting and repair.</p>
+</div>
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Laptop Service</h3>
+<p>Laptop checking, maintenance and repair.</p>
+</div>
+
+<div class="card">
+<div class="icon">📹</div>
+<h3>CCTV Installation</h3>
+<p>CCTV installation and setup services.</p>
+</div>
+
+<div class="card">
+<div class="icon">🖨️</div>
+<h3>Printer Service</h3>
+<p>Printer checking and service support.</p>
+</div>
+
+</div>
+
 </section>
+
+
+<section class="contact" id="contact">
+
+<h2 class="title">Contact Us</h2>
+
+<p><strong>Hi-Tech Computer Pali</strong></p>
+
+<p>📞 8005824340</p>
+
+<p>📍 Pali, Rajasthan</p>
+
+<div class="buttons">
+
+<a class="btn gold"
+href="https://wa.me/918005824340">
+WhatsApp Us
+</a>
+
+<a class="btn black"
+href="tel:+918005824340">
+Call Now
+</a>
+
+</div>
+
+</section>
+
 
 <footer>
-  © 2026 Hi-Tech Computer Pali. All Rights Reserved.
+
+© 2026 Hi-Tech Computer Pali
+<br>
+Computer • Laptop • CCTV • Accessories
+
 </footer>
+
+
+<a class="whatsapp"
+href="https://wa.me/918005824340">
+💬
+</a>
 
 </body>
 </html>
